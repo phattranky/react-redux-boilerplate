@@ -11,14 +11,18 @@ export const loadRepos = (username) => (
 
     dispatch({
       type: GITHUB_REPOS_VIEW_ACTIONS.LOADING_CHANGED,
-      data: true
+      data: {
+        isLoading: true
+      }
     });
 
     fetch(url)
       .then((result) => {
         dispatch({
           type: GITHUB_REPOS_VIEW_ACTIONS.LOADING_CHANGED,
-          data: false
+          data: {
+            isLoading: false
+          }
         });
 
         if (result.status === 200) {
@@ -42,10 +46,10 @@ export const loadRepos = (username) => (
   }
 );
 
-export const loadingChanged = (isLoading) => (
+export const loadingChanged = (data) => (
   {
     type: GITHUB_REPOS_VIEW_ACTIONS.LOADING_CHANGED,
-    data: isLoading
+    data
   }
 );
 
