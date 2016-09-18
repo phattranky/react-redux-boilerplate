@@ -5,6 +5,7 @@
 
 // Import helpers
 @import 'helpers/replace-image';
+@import '../base/colors.scss';
 
 // Import global styles (e.g. Bootstrap themes)
 // (None)
@@ -14,4 +15,11 @@ html {
 }
 
 body {
+}
+
+.block-wrapper {
+  background-color: $lightGreyColor;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  display: inline-block;
 }

@@ -1,18 +1,14 @@
 import React from 'react';
 import Header from 'js/components/layout/Header';
-import { Link } from 'react-router';
+import Nav from 'js/components/layout/Nav';
 
 import 'scss/components/app';
 
 const App = ({ children }) => (
   <div className="app">
     <Header />
-    <div>
-      <Link to="/github-repos">
-        Search GitHub Repositories
-      </Link>
-    </div>
-    <div>
+    <Nav />
+    <div className="wrapper">
       {children}
     </div>
   </div>

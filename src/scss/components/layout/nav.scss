@@ -1,0 +1,30 @@
+@import "../../../scss/base/colors";
+
+ul {
+  &.menu {
+    background-color: $darkColor;
+    margin: 0;
+    list-style-type: none;
+    padding: 0 1.5rem;
+  }
+  
+  li {
+    display: inline-block;
+    
+    a {
+      padding: 0.5rem;
+      text-decoration: none;
+      color: #fff;
+      display: block;
+      
+      &:hover, &:focus, &.active {
+        background-color: $secondaryColor;
+      }
+      
+      a:focus, a:hover {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+}

@@ -44,7 +44,7 @@ class GitHubResposView extends Component {
   constructor(props) {
     super(props);
 
-    //this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
@@ -68,7 +68,7 @@ class GitHubResposView extends Component {
     const { isLoading, repositories } = this.props;
 
     return (
-      <div className="container">
+      <div className="block-wrapper">
         <form ref="form" className="form form-inline row" onSubmit={(e) => this.handleSubmit(e)}>
           <div className="form-group">
             <input
