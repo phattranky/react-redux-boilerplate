@@ -1,8 +1,9 @@
 import React from 'react';
+import LineChart from './LineChart';
 
 const D3VisitorDashboardView = () => (
-  <div className="block-wrapper">
-    <h1>Hello World D3 + React</h1>
+  <div>
+    <LineChart />
   </div>
 );
 

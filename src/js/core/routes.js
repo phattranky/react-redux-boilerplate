@@ -10,7 +10,7 @@ import App from '../components/App';
 import HomeView from '../routes/home-view/components/HomeView';
 import GitHubReposView from '../routes/github-repos-view/components/GitHubReposView';
 import D3VisitorDashboardView from
-        '../routes/d3-visitor-dashboard-view/components/D3VisitorDashboardView';
+        '../routes/d3-view/components/D3VisitorDashboardView';
 
 // List route configuration
 const routes = (
