@@ -1,9 +1,15 @@
 import React from 'react';
 import LineChart from './LineChart';
+import StackedChart from './StackedChart';
 
 const D3VisitorDashboardView = () => (
   <div>
-    <LineChart />
+    <div>
+      <LineChart />
+    </div>
+    <div>
+      <StackedChart />
+    </div>
   </div>
 );
 

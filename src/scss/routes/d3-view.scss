@@ -26,3 +26,14 @@
     opacity: 1;
   }
 }
+
+// stacked-chart-wrapper
+.stacked-chart-wrapper {
+  
+  .axis--x {
+
+    .tick {
+      stroke-dasharray: 1;
+    }
+  }
+}

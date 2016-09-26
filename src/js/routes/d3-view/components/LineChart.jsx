@@ -6,7 +6,7 @@ import Grid from './Grid';
 import Axis from './Axis';
 import ToolTip from './Tooltip';
 
-import '../../../../scss/routes/LineChart';
+import '../../../../scss/routes/d3-view';
 
 class LineChart extends Component {
 
