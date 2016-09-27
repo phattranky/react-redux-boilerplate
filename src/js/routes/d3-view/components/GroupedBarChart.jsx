@@ -42,7 +42,10 @@ class GroupedBarChart extends Component {
     // Scale data
     const x0 = d3.scaleBand()
       .rangeRound([0, width], 0.1);
-    const x1 = d3.scaleBand();
+
+    const x1 = d3.scaleBand()
+      .paddingOuter(10);
+
     const y = d3.scaleLinear()
       .range([height, 0]);
     const color = d3.scaleOrdinal()
@@ -130,18 +133,39 @@ class GroupedBarChart extends Component {
         .attr('class', 'state')
         .attr('transform', (d) => (`translate(${x0(d.date)},0)`));
 
+    // dateData.selectAll('rect')
+    //   .data((d) => {
+    //     console.log('DDDDD ', d);
+    //     return d.socials;
+    //   })
+    //   .enter()
+    //   .append('rect')
+    //     .attr('width', x1.bandwidth())
+    //     .attr('x', (d) => (x1(d.name)))
+    //     .attr('y', (d) => (y(d.value)))
+    //     .attr('height', (d) => (height - y(d.value)))
+    //     .style('fill', (d) => (color(d.name)));
+
+    const self = this;
     dateData.selectAll('rect')
       .data((d) => {
         console.log('DDDDD ', d);
         return d.socials;
       })
       .enter()
-      .append('rect')
-        .attr('width', x1.bandwidth())
-        .attr('x', (d) => (x1(d.name)))
-        .attr('y', (d) => (y(d.value)))
-        .attr('height', (d) => (height - y(d.value)))
-        .style('fill', (d) => (color(d.name)));
+      .append('path')
+      .attr('d', (d) => (self.rightRoundedRect(x1(d.name), y(d.value),
+          x1.bandwidth(), (height - y(d.value)), 10)
+      ))
+      .style('fill', (d) => (color(d.name)));
+  }
+
+  rightRoundedRect(x, y, width, height, radius) {
+    return `M${x},${y}h${(width - radius)}
+      a${radius}, ${radius} 0 0 1 ${radius},${radius}
+      v${(height - 2 * radius)}
+      a${radius},${radius} 0 0 1 ${-radius},${radius}
+      h${(radius - width)}z`;
   }
 
   handleMouseMove(d) {
