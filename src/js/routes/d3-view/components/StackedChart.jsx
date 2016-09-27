@@ -125,22 +125,14 @@ class StackedChart extends Component {
       .enter()
       .append('g')
         .attr('class', 'serie')
-        .attr('fill', (d) => {
-          console.log('fill d', d);
-          return z(d.key);
-        })
+        .attr('fill', (d) => (z(d.key)))
       .selectAll('rect')
       .data((d) => (d))
       .enter()
       .append('rect')
         .attr('x', (d) => (x(d.data.date)))
         .attr('y', (d) => (y(d[1])))
-        .attr('height', (d) => {
-          console.log('d', d);
-          console.log('d[0]', d[0]);
-          console.log('d[1]', d[1]);
-          return y(d[0]) - y(d[1]);
-        })
+        .attr('height', (d) => (y(d[0]) - y(d[1])))
         .attr('width', x.bandwidth())
       .on('mouseover', () => { this.tooltip.style('display', null); })
       .on('mouseout', () => { this.tooltip.style('display', 'none'); })

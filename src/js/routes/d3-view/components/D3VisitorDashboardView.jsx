@@ -1,6 +1,7 @@
 import React from 'react';
 import LineChart from './LineChart';
 import StackedChart from './StackedChart';
+import GroupedBarChart from './GroupedBarChart';
 
 const D3VisitorDashboardView = () => (
   <div>
@@ -9,6 +10,9 @@ const D3VisitorDashboardView = () => (
     </div>
     <div>
       <StackedChart />
+    </div>
+    <div>
+      <GroupedBarChart />
     </div>
   </div>
 );
