@@ -154,8 +154,8 @@ class GroupedBarChart extends Component {
       })
       .enter()
       .append('path')
-      .attr('d', (d) => (self.rightRoundedRect(x1(d.name), y(d.value),
-          x1.bandwidth(), (height - y(d.value)), 10)
+      .attr('d', (d) => (self.topRoundedRect(x1(d.name), y(d.value),
+          x1.bandwidth(), (height - y(d.value)), 20)
       ))
       .style('fill', (d) => (color(d.name)));
   }
@@ -166,6 +166,15 @@ class GroupedBarChart extends Component {
       v${(height - 2 * radius)}
       a${radius},${radius} 0 0 1 ${-radius},${radius}
       h${(radius - width)}z`;
+  }
+
+  topRoundedRect(x, y, width, height, radius) {
+    return `M${x},${y + radius}
+      a${radius}, ${radius} 0 0 1 ${radius},${-radius}
+      h${(width - (2 * radius))}
+      a${radius}, ${radius} 0 0 1 ${radius},${radius}
+      v${(height - radius)}
+      h${(- width)}z`;
   }
 
   handleMouseMove(d) {
