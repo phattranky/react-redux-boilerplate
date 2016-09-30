@@ -2,6 +2,7 @@ import React from 'react';
 import LineChart from './LineChart';
 import StackedChart from './StackedChart';
 import GroupedBarChart from './GroupedBarChart';
+import DivergingBarChart from './DivergingBarChart';
 
 const D3VisitorDashboardView = () => (
   <div>
@@ -13,6 +14,9 @@ const D3VisitorDashboardView = () => (
     </div>
     <div>
       <GroupedBarChart />
+    </div>
+    <div>
+      <DivergingBarChart />
     </div>
   </div>
 );
