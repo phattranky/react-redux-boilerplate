@@ -148,10 +148,7 @@ class GroupedBarChart extends Component {
 
     const self = this;
     dateData.selectAll('rect')
-      .data((d) => {
-        console.log('DDDDD ', d);
-        return d.socials;
-      })
+      .data((d) => (d.socials))
       .enter()
       .append('path')
       .attr('d', (d) => (self.topRoundedRect(x1(d.name), y(d.value),
