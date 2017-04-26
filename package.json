@@ -1,11 +1,11 @@
 {
-  "name": "react-router-boilerplate",
-  "author": "Alvin Teh <i@alvinteh.me> (http://alvinteh.me)",
+  "name": "react-redux-boilerplate",
+  "author": "Phat Tran <trankyphat@gmail.com> (http://trankyphat.com)",
   "description": "ES2015 boilerplate app with React, redux, react-router and webpack",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alvinteh/react-redux-boilerplate"
+    "url": "https://github.com/phattranky/react-redux-boilerplate"
   },
   "main": "lib/js/index.js",
   "dependencies": {
