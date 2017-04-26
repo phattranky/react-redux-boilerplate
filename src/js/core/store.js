@@ -26,7 +26,7 @@ reqGlobalActionTypes.keys().forEach((filename) => {
 });
 
 // Create and add other page-specific reducers
-const reqRouteActionTypes = require.context('../routes', true, /\/action\-types\/[a-z\-]+\.js$/i);
+const reqRouteActionTypes = require.context('../routes', true, /\/action-types\/[a-z-]+\.js$/i);
 
 reqRouteActionTypes.keys().forEach((filename) => {
   const reducerName = filename.split('.')[1].substr(1).replace('/action-types', '');
