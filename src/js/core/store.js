@@ -37,10 +37,13 @@ reqRouteActionTypes.keys().forEach((filename) => {
 const appReducer = combineReducers(childReducers);
 
 // Create the app store
-const store = compose(
-  applyMiddleware(thunkMiddleware, createLogger()),
-  window && window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument(),
-)(createStore)(appReducer);
+const store = createStore(
+  appReducer,
+  compose(
+    applyMiddleware(thunkMiddleware, createLogger()),
+    window && window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument()
+  )
+);
 
 // Export the app store
 export default store;

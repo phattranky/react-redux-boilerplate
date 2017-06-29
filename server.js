@@ -10,10 +10,12 @@ const envConfig = require('./etc/env.json');
 const webpackConfig = require('./webpack.config.js');
 
 // Define configuration variables
+/*eslint-disable */
 const ENV_NAME = process.env.WEBPACK_ENV;
+/*eslint-enable */
 const DEV_SERVER_CONFIG = envConfig.devServer;
 
-//Initialize app
+// Initialize app
 const app = express();
 
 const compiler = webpack(webpackConfig);
@@ -36,7 +38,7 @@ app.use(webpackHotMiddleware(compiler));
 
 app.use(express.static(webpackConfig.output.publicPath));
 
-app.get('*', function response(req, res) {
+app.get('*', (req, res) => {
   res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'lib/index.html')));
   res.end();
 });

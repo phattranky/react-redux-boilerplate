@@ -43,16 +43,14 @@ class Tooltip extends Component {
         const arrowTranslateHeight = height - 2;
         transform = `translate(${translateWidth},${yTranslateHeight})`;
         transformArrow = `translate(${arrowTranslateWidth},${arrowTranslateHeight})`;
-      }
-      else if (y < height) {
+      } else if (y < height) {
         const translateWidth = x - halfWidth;
         const yTranslateHeight = Math.round(y) + 20;
         const arrowTranslateWidth = halfWidth - 20;
         transform = `translate(${translateWidth}, ${yTranslateHeight})`;
         transformArrow = `translate(${arrowTranslateWidth},0) rotate(180,20,0)`;
       }
-    }
-    else {
+    } else {
       visibility = 'hidden';
     }
 

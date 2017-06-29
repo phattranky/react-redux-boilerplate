@@ -30,8 +30,7 @@ export function createReducer(actionTypes) {
             || actionType.indexOf('@@ROUTES_SEARCH-VIEW/SEARCH_REQUEST') >= 0
             || actionType.indexOf('@@ROUTES_TAGS-TAG-VIEW/POSTS_REQUEST') >= 0) {
             newState = extend({}, state, action.data);
-          }
-          else {
+          } else {
             newState = extend({}, state, { isRequesting: true });
           }
           break;

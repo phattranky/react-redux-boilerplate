@@ -14,7 +14,7 @@ const envConfig = require('./etc/env.json');
 const ENV_NAME = process.env.WEBPACK_ENV;
 
 // Define base configuration
-var config = {
+const config = {
   // Define core configuration
   context: path.resolve(__dirname, './src'),
   entry: path.resolve(__dirname, './src/js/index.js'),
@@ -38,12 +38,12 @@ var config = {
         exclude: /node_modules/
       },
       {
-          test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-          loader: 'file',
-          query: {
-            mimetype: 'image/svg+xml',
-            name: 'fonts/[name].[ext]'
-          }
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file',
+        query: {
+          mimetype: 'image/svg+xml',
+          name: 'fonts/[name].[ext]'
+        }
       },
       {
         test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/,
@@ -150,12 +150,11 @@ if (ENV_NAME === 'dev') {
 
   // Configure JS linting
   config.module.loaders.push({
-      test: /(.jsx?)$/,
-      loader: 'eslint-loader',
-      exclude: /node_modules/
+    test: /(.jsx?)$/,
+    loader: 'eslint-loader',
+    exclude: /node_modules/
   });
-}
-else if (ENV_NAME === 'dist') {
+} else if (ENV_NAME === 'dist') {
     // Configure output filenames
   config.output.filename = 'js/app.min.js';
   config.output.publicPath = './';
@@ -167,8 +166,8 @@ else if (ENV_NAME === 'dist') {
       'css',
       'postcss',
       'resolve-url',
-      'sass?sourceMap',
-      ].join('!'))
+      'sass?sourceMap'
+    ].join('!'))
   });
 
   config.plugins.push(
@@ -190,7 +189,7 @@ else if (ENV_NAME === 'dist') {
       }
     }),
     new ExtractTextPlugin('css/app.min.css')
-  )
+  );
 }
 
 // Export configuration
