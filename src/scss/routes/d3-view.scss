@@ -1,53 +1,57 @@
 .line-chart {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 2px;
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
 }
 
 .line-chart-wrapper {
-  .axis{
-    fill:#555;
-    opacity: 1;
-  }
+    .axis{
+        fill:#555;
+        opacity: 1;
+    }
+
   
-  .axis path,
-  .axis line {
-    fill: none;
-    stroke: none;
-    shape-rendering: crispEdges;
-  }
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: none;
+        shape-rendering: crispEdges;
+    }
+
   
-  .axis text {
-    font-size: 14px;
-  }
+    .axis text {
+        font-size: 14px;
+    }
+
   
-  .y-grid .tick{
-    stroke: #555;
-    opacity: 1;
-  }
+    .y-grid .tick{
+        stroke: #555;
+        opacity: 1;
+    }
 }
 
 // stacked-chart-wrapper
 .stacked-chart-wrapper {
   
-  .axis--x {
-
-    .tick {
-      stroke-dasharray: 1;
+    .axis--x {
+        .tick {
+            stroke-dasharray: 1;
+        }
     }
-  }
 }
 
 .diverging-barchart-wrapper {
-  .bar {
-    fill: #064B7F;
-  }
+    .bar {
+        fill: #064b7f;
+    }
+
   
-  .bar2 {
-    fill: #EC3D69;
-  }
+    .bar2 {
+        fill: #ec3d69;
+    }
+
   
-  .text-legend {
-    font-size: 18px;
-  }
+    .text-legend {
+        font-size: 18px;
+    }
 }
