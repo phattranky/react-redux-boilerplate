@@ -75,8 +75,9 @@
     "stylelint-config-standard": "^16.0.0"
   },
   "scripts": {
-    "build": "cross-env npm install && WEBPACK_ENV=dist webpack",
+    "build": "npm install && cross-env WEBPACK_ENV=dist webpack",
     "dev": "cross-env WEBPACK_ENV=dev node server.js",
+    "prod": "cross-env WEBPACK_ENV=dist node server.js",
     "start": "npm run dev",
     "js-fix": "eslint --fix .",
     "style-fix": "stylelint **/*.scss --fix"

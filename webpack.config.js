@@ -157,7 +157,7 @@ if (ENV_NAME === 'dev') {
 } else if (ENV_NAME === 'dist') {
     // Configure output filenames
   config.output.filename = 'js/app.min.js';
-  config.output.publicPath = './';
+  config.output.publicPath = './lib';
 
   // Configure SCSS transpiling
   config.module.loaders.push({
