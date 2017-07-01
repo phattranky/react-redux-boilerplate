@@ -73,9 +73,9 @@ const config = {
         test: /\.(jpg|png)$/,
         loader: 'file',
         query: {
-          name: 'img/[name].[ext]'
+          name: 'images/[name].[ext]'
         },
-        include: path.resolve(__dirname, './src/img')
+        include: path.resolve(__dirname, './src/images')
       }
     ]
   },
@@ -86,8 +86,12 @@ const config = {
   plugins: [
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, './src/img/misc'),
-        to: path.resolve(__dirname, './lib/img/misc')
+        from: path.resolve(__dirname, './src/images'),
+        to: path.resolve(__dirname, './lib/images')
+      },
+      {
+        from: path.resolve(__dirname, './src/fonts'),
+        to: path.resolve(__dirname, './lib/fonts')
       }
     ]),
     new HtmlWebpackPlugin({
@@ -119,6 +123,7 @@ if (ENV_NAME === 'dev') {
   ];
 
   config.output.publicPath = '/';
+  config.output.staticSrcPath = '/';
 
   // Configure SCSS transpiling
   config.module.loaders.push({
@@ -157,7 +162,8 @@ if (ENV_NAME === 'dev') {
 } else if (ENV_NAME === 'dist') {
     // Configure output filenames
   config.output.filename = 'js/app.min.js';
-  config.output.publicPath = './lib';
+  config.output.publicPath = '/';
+  config.output.staticSrcPath = './lib';
 
   // Configure SCSS transpiling
   config.module.loaders.push({
